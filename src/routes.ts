@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { dashboardRoutes } from "./dashboard/dashboard.routes";
 import { expensesRoutes } from "./expenses/expenses.routes";
 import { invoicingRoutes } from "./invoicing/invoicing.routes";
+import { inventoryRoutes } from "./inventory/inventory.routes";
 
 export const routes = new Hono();
 
@@ -10,3 +11,5 @@ export const routes = new Hono();
 routes.route("/dashboard", dashboardRoutes);
 routes.route("/expenses", expensesRoutes);
 routes.route("/invoicing", invoicingRoutes);
+routes.route("/inventory", inventoryRoutes);
+

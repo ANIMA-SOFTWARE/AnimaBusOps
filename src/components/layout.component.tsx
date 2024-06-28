@@ -17,6 +17,7 @@ export const Layout = (props: { children?: any }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         ></link>
         <link rel="stylesheet" href="/src/static/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
       </head>
       <body class="flex-col">
         <NavBar selectedIndex={0} />

@@ -12,23 +12,23 @@
 :root {
   --color-1: #000;
   --color-2: #bd00bd;
-  --color-3: #fff;
+  --color-3: #fffdf6;
   --color-4: #87878e;
   --font-family: "Teachers", sans-serif;
-  --font-size: 16px;
+  --font-size: 14px;
   --margin: 10px;
-  --padding: 20px;
+  --padding: 25px;
   --border-radius: 10px;
 }
 
 body {
   background-color: var(--color-1);
-  color: var(--color-2);
+  color: var(--color-3);
   font-family: var(--font-family);
   font-size: var(--font-size);
   margin: var(--margin);
-  padding: var(--padding);
-  height: 100vh;
+  padding: calc(var(--padding) * 4 );
+  /* height: 100vh; */
 }
 
 button,
@@ -53,38 +53,145 @@ input[type="submit"] {
 }
 
 input {
-  border: none;
   outline: none;
   font-family: var(--font-family);
   font-size: var(--font-size);
   padding: var(--padding);
+  margin: var(--margin);
   width: 100%;
-  border-radius: var(--border-radius);
+  /* border-radius: var(--border-radius); */
+  background-color: #000;
+  color: var(--color-3);
+  border: 1px solid var(--color-2);
 }
 
 h1 {
-  color: var(--color-3);
+  color: var(--color-2);
 }
+
 a {
+  text-decoration:underline;
+}
+
+ .navbar a {
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-4);
+  color: var(--color-3);
   padding: var(--padding);
   cursor: pointer;
 }
 
-a[selected] {
+.navbar a[selected] {
   color: var(--color-3);
 }
 
-#navbar {
+.navbar a:hover {
+  color: var(--color-2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* overflow: hidden; */
+}
+
+thead td {
+  text-align: left;
+  padding: var(--padding);
+  border: 1px solid var(--color-2);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tbody td {
+  padding: var(--padding);
+  text-align: center;
+  border: 1px solid var(--color-2);
+}
+
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: var(--padding);
-  border-bottom: 1px solid var(--color-4);
+  border-bottom: 1px solid var(--color-2);
+  background-color: var(--color-1);
 }
+
+/* The subnavigation menu */
+.subnav {
+  width: fit-content;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: var(--font-size);
+  border: none;
+  outline: none;
+  color: var(--color-3);
+  text-transform: uppercase;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  height: 70px;
+  transition: all 0.3s ease;
+  i {
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Subnav button */
+.subnav .subnavbtn:hover {
+  color: var(--color-2);
+  transition: all 0.3s ease;
+  i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+
+  
+}
+
+.subnavbtn:has(~ .subnav-content:hover) {
+  color: var(--color-2);
+  transition: all 0.3s ease;
+  i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-color: var(--color-1);
+  width: 100%;
+  z-index: 1;
+  border-top: 1px solid var(--color-2);
+  border-bottom: 1px solid var(--color-2);
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  color: var(--color-2);
+  display: flex;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: flex;
+}
+
 
 .flex {
   display: flex;
@@ -96,6 +203,13 @@ a[selected] {
 .flex-col {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }

@@ -5,4 +5,4 @@ export const expensesRoutes = new Hono();
 
 //this is where we'll put our expenses routes
 
-expensesRoutes.get("/", expensesHandlers.getExpensesPage);
+expensesRoutes.get("/", expensesHandlers.getPage);
