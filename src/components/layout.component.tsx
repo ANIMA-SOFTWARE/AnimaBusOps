@@ -20,9 +20,7 @@ export const Layout = (props: { children?: any }) => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
       </head>
       <body class="flex-col">
-        <NavBar selectedIndex={0} />
-        <main id="main">{props.children}</main>
-        <footer id="footer"></footer>
+        {props.children}
       </body>
     </html>
   );

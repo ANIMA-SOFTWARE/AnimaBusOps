@@ -8,6 +8,13 @@
       "when": 1719421737430,
       "tag": "0000_last_luminals",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1719737625608,
+      "tag": "0001_outgoing_paladin",
+      "breakpoints": true
     }
   ]
 }

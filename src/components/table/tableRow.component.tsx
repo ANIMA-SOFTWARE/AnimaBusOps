@@ -14,7 +14,7 @@ export const TableRow = (props: { record: any }) => {
     return (
       <tr>
         {cells}
-        <td><a>Edit</a></td>
+        <td><a hx-get="/inventory/edit/" hx-target="main">Edit</a></td>
       </tr>
     );
   };

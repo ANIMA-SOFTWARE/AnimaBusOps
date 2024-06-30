@@ -1,10 +1,13 @@
 import { drizzle } from 'drizzle-orm/bun-sqlite';
 import { Database } from 'bun:sqlite';
 import { migrate } from 'drizzle-orm/bun-sqlite/migrator';
-import { inventory } from '../schema';
+import { sessions, users } from '../schema';
+import { DrizzleSQLiteAdapter } from '@lucia-auth/adapter-drizzle';
+// import { inventory } from '../schema';
 
 const sqlite = new Database('sqlite.db');
 export const db = drizzle(sqlite);
+export const _adapter = new DrizzleSQLiteAdapter(db, sessions, users);
 console.log("Database connected");
 
 migrate(db, { migrationsFolder: "migrations" });

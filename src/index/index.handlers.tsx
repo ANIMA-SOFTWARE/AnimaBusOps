@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { Page } from "../dashboard/dashboard.page";
+import { Page } from "../login/login.page";
 import { Layout } from "../components/layout.component";
 
 export async function getIndexPage(c: Context) {

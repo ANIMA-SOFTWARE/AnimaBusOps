@@ -37,6 +37,11 @@ export async function getRecords(pageNo : number, search : string | undefined = 
 
   
 }
+
+export async function getRecord(id : number) {
+    const result =  await db.select().from(inventory).where(eq(inventory.id, id)).limit(1)
+    return result
+}
 export async function deleteRecord(id : number) {
     return db.delete(inventory).where(eq(inventory.id, id)).run();
 }

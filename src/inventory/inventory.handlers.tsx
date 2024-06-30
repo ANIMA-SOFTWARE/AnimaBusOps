@@ -5,7 +5,8 @@ import { NavBar } from "../components/navbar.component";
 import { Fragment } from "hono/jsx/jsx-runtime";
 import { db } from "../db";
 import { inventory } from "../../schema" 
-import { getRecords } from "./inventory.service";
+import { getRecords, deleteRecord, getRecord } from "./inventory.service";
+import { EditRecord } from "../components/table/editRecord.component";
 
 export async function get(c: Context) {
 
@@ -43,9 +44,17 @@ export async function get(c: Context) {
       </Fragment>
     )
 
-    //hx-vals={`{"search": "${searchStr}"}`}
-  
-  
+}
+
+export async function edit(c: Context) {
+const id = c.req.param("id");
+
+const record = await getRecord(Number(id));
+return c.html(
+  <Fragment>
+    <EditRecord record={record}/>
+  </Fragment>
+);
 }
 
 
