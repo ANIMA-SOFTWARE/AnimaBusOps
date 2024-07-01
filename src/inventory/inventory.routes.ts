@@ -5,4 +5,4 @@ export const inventoryRoutes = new Hono();
 
 inventoryRoutes.get("/", inventoryHandlers.getPage);
 inventoryRoutes.get("/pages/:page", inventoryHandlers.getNextPageRows);
-inventoryRoutes.post("/search", inventoryHandlers.getPage);
+inventoryRoutes.post("/search", inventoryHandlers.getNextPageRows);
