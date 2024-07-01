@@ -1,7 +1,4 @@
-import { sql } from "drizzle-orm"
 import {text,integer,sqliteTable} from "drizzle-orm/sqlite-core"
-import { DrizzleSQLiteAdapter } from "@lucia-auth/adapter-drizzle";
-import { db } from "./src/db";
 
 export const inventory = sqliteTable("inventory",{
     id: integer("id").notNull().primaryKey(),
@@ -31,16 +28,16 @@ export const sessions = sqliteTable("sessions", {
 	expiresAt: integer("expiresAt").notNull()
 });
 
-export const userPermissions = sqliteTable("userPermissions",{
-    id: integer("id").notNull().primaryKey(),
-    permission: text("permission").notNull(),
-    userId: integer("userId").notNull().references(() => users.id),
-})
+// export const userPermissions = sqliteTable("userPermissions",{
+//     id: integer("id").notNull().primaryKey(),
+//     permission: text("permission").notNull(),
+//     userId: integer("userId").notNull().references(() => users.id),
+// })
 
-export const userOptions = sqliteTable("userOptions",{
-    id: integer("id").notNull().primaryKey(),
-    option: text("option").notNull(),
-    value: text("value").notNull(),
-    userId: integer("userId").notNull().references(() => users.id),
-})
+// export const userOptions = sqliteTable("userOptions",{
+//     id: integer("id").notNull().primaryKey(),
+//     option: text("option").notNull(),
+//     value: text("value").notNull(),
+//     userId: integer("userId").notNull().references(() => users.id),
+// })
 

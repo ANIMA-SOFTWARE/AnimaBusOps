@@ -1,8 +1,11 @@
 import { Hono } from "hono";
 import * as usersHandlers from "./users.handlers";
 
-const users = new Hono();
+export const usersRoutes = new Hono();
 
-users.post("/", usersHandlers._createUser);
+usersRoutes.post("/", usersHandlers.insert);
+usersRoutes.get("/", usersHandlers.getAll);
+usersRoutes.get("/:id", usersHandlers.getById);
+usersRoutes.delete("/:id", usersHandlers.destroy);
+usersRoutes.put("/:id", usersHandlers.append);
 
-export default users;

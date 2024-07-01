@@ -1,4 +1,4 @@
-import { NavBar } from "./navbar.component";
+
 export const Layout = (props: { children?: any }) => {
   return (
     <html>

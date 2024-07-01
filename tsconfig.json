@@ -1,10 +1,35 @@
 {
   "compilerOptions": {
-    "strict": true,
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "types": ["@types/bun"],
-    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
+
+     // Strict mode (9)
+     "strict": true,
+     "alwaysStrict": true,
+     "noImplicitAny": true,
+     "noImplicitThis": true,
+     "strictNullChecks": true,
+     "strictBindCallApply": true,
+     "strictFunctionTypes": true,
+     "strictPropertyInitialization": true,
+     "useUnknownInCatchVariables": true,
+ 
+     // No unused code (4)
+     "noUnusedLocals": true,
+     "noUnusedParameters": true,
+     "allowUnusedLabels": false,
+     "allowUnreachableCode": false,
+ 
+     // No implicit code (2)
+     "noImplicitOverride": true,
+     "noImplicitReturns": true,
+ 
+     // Others (5)
+     "noUncheckedIndexedAccess": true,
+     "noPropertyAccessFromIndexSignature": true,
+     "forceConsistentCasingInFileNames": true,
+     "noFallthroughCasesInSwitch": true,
   }
 }

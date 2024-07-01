@@ -15,6 +15,13 @@
       "when": 1719737625608,
       "tag": "0001_outgoing_paladin",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1719863309307,
+      "tag": "0002_opposite_mattie_franklin",
+      "breakpoints": true
     }
   ]
 }

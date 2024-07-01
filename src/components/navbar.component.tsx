@@ -35,6 +35,10 @@ export const NavBar = (props: { selectedIndex: number; oobSwap?: boolean }) => {
           </a>
         </div> 
       </div>
+      <div class="subnav logout">
+          <button class="subnavbtn" hx-post="/logout" hx-target="body" hx-replace-url="true">Logout</button>
+      </div>
     </div>
+
   );
 };

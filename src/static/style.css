@@ -219,3 +219,10 @@ tbody td {
   align-items: center;
   justify-content: center;
 }
+
+.logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}

@@ -3,6 +3,6 @@ import * as inventoryHandlers from "./inventory.handlers";
 
 export const inventoryRoutes = new Hono();
 
-inventoryRoutes.get("/", inventoryHandlers.get);
-inventoryRoutes.get("/pages/:page", inventoryHandlers.get);
-inventoryRoutes.post("/search", inventoryHandlers.get);
+inventoryRoutes.get("/", inventoryHandlers.getPage);
+inventoryRoutes.get("/pages/:page", inventoryHandlers.getNextPageRows);
+inventoryRoutes.post("/search", inventoryHandlers.getPage);

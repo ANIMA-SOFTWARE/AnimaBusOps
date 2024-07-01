@@ -1,8 +1,9 @@
-import { Hono, Context } from "hono";
+import { Hono} from "hono";
 import { serveStatic } from "hono/bun";
 import { logger } from "hono/logger";
 import { User,Session} from "lucia";
 import { getCookie } from "hono/cookie";
+import { cors } from "hono/cors";
 import { csrf } from "hono/csrf";
 import { _lucia } from "./auth";
 
@@ -14,6 +15,13 @@ export const middleware = new Hono<{
 		session: Session | null;
 	};
 }>();
+
+//cors
+var corsOptions = {
+	origin: "http://localhost:3000",
+  };
+  
+  middleware.use("*", cors(corsOptions));
 
 //logger middleware
 const customLogger = (message: string, ...rest: string[]) => {

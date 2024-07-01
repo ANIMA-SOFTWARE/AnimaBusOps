@@ -1,13 +1,20 @@
 import { Context } from "hono";
 import { Page } from "./dashboard.page";
-import { Fragment } from "hono/jsx/jsx-runtime";
 import { NavBar } from "../components/navbar.component";
+import { Layout } from "../components/layout.component";
 
 export async function getDashboardPage(c: Context) {
+const user = c.get("user");
+  if (!user) {
+    return c.redirect("/login");
+}
+
+
   return c.html(
-    <Fragment>
+
+  <Layout>
       <NavBar selectedIndex={0} oobSwap={true} />
       <Page />
-    </Fragment>
+  </Layout>
   );
 }
