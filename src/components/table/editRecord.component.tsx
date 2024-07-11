@@ -1,26 +1,27 @@
-import { JSX } from "hono/jsx/jsx-runtime";
+import { Fragment } from "hono/jsx/jsx-runtime";
 
 export const EditRecord = (props: { record: any }) => {
+  console.log(props.record)
 
-    const inputs = props.record.map((prop : any) => {
-      return <Input Value={prop}/>
+    const inputs = Object.entries(props.record).map(([key,value]) => {
+     return (
+      <Fragment>
+        <label for={key}>{key}</label>
+        <input type="text" name={key} value={String(value)}/>
+        </Fragment>
+      );
     })
 
 return (
-    <div id="modal flex-col">
+    <form hx-target="main" class='flex-col'>
         {inputs}
-    </div>   
+        <div id='button-container' class="flex-row">
+        <input type="button" value="Save" hx-put={"/inventory/" + props.record.id}/>
+        <input type="button" value="Cancel" hx-get={"/inventory"} />
+        <input type="reset" value="Reset" />
+        <input type="button" value="Delete" hx-confirm="Are you sure?" hx-delete={"/inventory/" + props.record.id} />
+        </div>
+    </form>   
     )
 
 }
-
-const Input = (props: { Value: any }) => {
-
-
-
-  return (
-    <label for={props.Value}>{props.Value}
-    <input type="text" name={props.Value}/>
-    </label>
-  );
-};

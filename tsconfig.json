@@ -17,7 +17,6 @@
      "useUnknownInCatchVariables": true,
  
      // No unused code (4)
-     "noUnusedLocals": true,
      "noUnusedParameters": true,
      "allowUnusedLabels": false,
      "allowUnreachableCode": false,

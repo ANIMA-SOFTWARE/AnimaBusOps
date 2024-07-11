@@ -32,7 +32,7 @@ body {
 }
 
 button,
-input[type="submit"] {
+input[type="submit"],input[type="button"],input[type="reset"] {
   cursor: pointer;
   border: none;
   background-color: var(--color-2);
@@ -41,7 +41,6 @@ input[type="submit"] {
   font-family: var(--font-family);
   font-size: var(--font-size);
   padding: var(--padding);
-  border-radius: var(--border-radius);
 }
 
 form {
@@ -71,6 +70,7 @@ h1 {
 
 a {
   text-decoration:underline;
+  cursor: pointer;
 }
 
  .navbar a {

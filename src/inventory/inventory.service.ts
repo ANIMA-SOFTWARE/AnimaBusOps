@@ -52,3 +52,7 @@ export async function getInventoryAll() {
 export async function insertInventory(record : any) {
     return db.insert(inventory).values(record).returning()
 }
+
+export async function updateInventory(record : any) {
+    return db.update(inventory).set(record).where(eq(inventory.id, record.id)).returning()
+}

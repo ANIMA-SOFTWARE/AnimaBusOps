@@ -14,7 +14,7 @@ const user = c.get("user");
 
   <Layout>
       <NavBar selectedIndex={0} oobSwap={true} />
-      <Page />
+      <Page><h1>Dashboard</h1></Page>
   </Layout>
   );
 }
